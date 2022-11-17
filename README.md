@@ -1,2 +1,2 @@
-# GMRL-FLASH
-GMRL LInux based flash tool with flashrom, amdvbflash, nvflash 
+# GRML-FLASH
+GRML LInux based flash tool with flashrom, amdvbflash, nvflash 
