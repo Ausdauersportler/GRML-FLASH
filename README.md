@@ -76,10 +76,14 @@ To use the iMac/Mac BIOS flashing tools change working directory to:
 % cd /lib/live/mount/persistence/sda/flash/Firmware
 `
 
-## ssh remote access
+## Remote Access via SSH
 
 In case you have a black screen scenario with a non working graphics card detach all bootable disk devices, attach your iMac via ethernet directly to a router providing a DHCP service and force booting form the USB tool. Check your router for the IP address (e.g. 192.168.1.20) provided to your iMac and access the Linux distribution remotly from another PC, Mac, iPad - literally any device running an SSH client can be used. Default password of user `root` is `flash`. Access is possible through (replace IP with your address)
 
 `
 % ssh root@IP 
 `
+
+## Rebuilding a new GRML 
+
+The tool uses FAT32 to achieve double compability. It can be booted on any Mac without installing another boot loader and you have read and write access from the Apple Finder. GRML uses normally Linux ext2, so we have to boot strap through two stages folling this [guide](https://forums.macrumors.com/threads/imac-2011-see-more-uefi-firmware-mod.2257435/post-31093603) by using the existing GRML tool. Download a new version of GRML [here](https://grml.org). Upcoming version will be 2022.11.
