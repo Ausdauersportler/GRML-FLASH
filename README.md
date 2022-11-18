@@ -16,7 +16,7 @@ Of course this tool can be used on any other Intel based system.
 
 ## Working directory with persistence
 
-The tool supports persistence, i.e. dumps from your BIOS or video BIOS can be saved on the USB device in the particualar working directorey as described below.
+The tool supports persistence, i.e. dumps from your BIOS or video BIOS can be saved on the USB device in the particualar working directory as described below.
 
 After booting configure the local keyboard and check for the working directory using the `lsblk` command. 
 
@@ -74,4 +74,12 @@ To use the iMac/Mac BIOS flashing tools change working directory to:
 
 `
 % cd /lib/live/mount/persistence/sda/flash/Firmware
+`
+
+## ssh remote access
+
+In case you have a black screen scenario with a non working graphics card detach all bootable disk devices, attach your iMac via ethernet directly to a router providing a DHCP service and force booting form the USB tool. Check your router for the IP address (e.g. 192.168.1.20) provided to your iMac and access the Linux distribution remotly from another PC, Mac, iPad - literally any device running an SSH client can be used. Default password of user `root` is `flash`. Access is possible through (replace IP with your address)
+
+`
+% ssh root@IP 
 `
