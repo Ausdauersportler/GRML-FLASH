@@ -87,3 +87,9 @@ In case you have a black screen scenario with a non working graphics card detach
 ## Rebuilding a new GRML 
 
 The tool uses FAT32 to achieve double compability. It can be booted on any Mac without installing another boot loader and you have read and write access from the Apple Finder. GRML uses normally Linux ext2, so we have to boot strap through two stages folling this [guide](https://forums.macrumors.com/threads/imac-2011-see-more-uefi-firmware-mod.2257435/post-31093603) by using the existing GRML tool. Download a new version of GRML [here](https://grml.org). Upcoming version will be 2022.11.
+
+## License
+
+[GRML](https://grml.org) is a packaged Linux distribution based on [Debian](https://www.debian.org). Debian [license rules](https://www.debian.org/legal/index.en.html) can be obtained the project page.
+
+Please look up the license rules of the mainly used software like [Flashrom](https://www.flashrom.org/Flashrom), [amdvbflash](https://www.techpowerup.com/download/ati-atiflash/) and [nvflash](https://www.techpowerup.com/download/nvidia-nvflash/).
