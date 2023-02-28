@@ -6,13 +6,15 @@ Download disk image and restore it using the [Balena Etcher tool](https://www.ba
 
 The purpose of this tool is to use `amdvbflash` or `nvflash` to write new Video BIOS versions to graphics adapters or to save and modify (Apple iMac) firmware using `flashrom` and `UEFIPatch` to enable EFI boot screen support for Apple iMac models
 
+iMac10,1 late 2000 21.5 inch and iMac10,1 late 2000 27 inch
+
 iMac11,1 late 2009
 
 iMac11,2 and iMac11,3 mid 2010
 
 iMac12,1 and iMac12,2 mid 2011
 
-Of course this tool can be used on any other Intel based system.
+Of course this tool can be used on any other Intel based system like MacPro4,1 or MacPro5,1 systems!
 
 ## Working directory with persistence
 
@@ -62,7 +64,7 @@ and
 ```
 % ./nvflash --protectoff
 
-% ./nvflash -6 NewNVBIOS.rom
+% ./nvflash -6 NVIDIA/NewNVBIOS.rom
 
 % ./nvflash --verify
 ```
@@ -75,6 +77,12 @@ To use the iMac/Mac BIOS flashing tools change working directory to:
 `
 % cd /lib/live/mount/persistence/sda/flash/Firmware
 `
+
+## Accessing saved files from macOS 
+
+Your saved video BIOS files can be found on the USB (Windows FAT32 format) under flash -> Video -> Backups assuming your have used the linux terminal commands as described above.
+
+If you plan to write a new AMD video BIOS to your card just copy the new image into the flash -> Video -> AMD in advance.
 
 ## Remote Access via SSH
 
