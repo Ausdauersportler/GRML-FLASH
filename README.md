@@ -6,6 +6,8 @@ Download disk image and restore it using the [Balena Etcher tool](https://www.ba
 
 The purpose of this tool is to use `amdvbflash` or `nvflash` to read existing or write new Video BIOS versions to graphics adapters or to save and modify (Apple iMac) firmware using `flashrom` and `UEFIPatch` to enable EFI boot screen support for Apple iMac models
 
+iMac9,1 early 2009 24 inch (2,93GHz and 3,06GHz models, only)
+
 iMac10,1 late 2009 21.5 inch
 
 iMac10,1 late 2009 27 inch
