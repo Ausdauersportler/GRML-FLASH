@@ -70,7 +70,7 @@ and
 
 % ./nvflash -6 NVIDIA/NewNVBIOS.rom
 
-% ./nvflash --verify
+% ./nvflash --verify NVIDIA/NewNVBIOS.rom
 ```
 Reboot after flashing the video BIOS.
 
