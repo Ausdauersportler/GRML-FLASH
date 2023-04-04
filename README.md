@@ -105,3 +105,7 @@ The tool uses FAT32 to achieve double compability. It can be booted on any Mac w
 [GRML](https://grml.org) is a packaged Linux distribution based on [Debian](https://www.debian.org). Debian [license rules](https://www.debian.org/legal/index.en.html) can be obtained the project page.
 
 Please look up the license rules of the mainly used software like [Flashrom](https://www.flashrom.org/Flashrom), [amdvbflash](https://www.techpowerup.com/download/ati-atiflash/) and [nvflash](https://www.techpowerup.com/download/nvidia-nvflash/).
+
+## Support
+
+If you want to support the AMD (i)Mac vBIOS development [donations](https://www.paypal.com/paypalme/Ausdauersportler) are greatly appreciated.
