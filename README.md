@@ -87,7 +87,7 @@ and
 % .flashrom --programmer internal -r myfirmware.bin
 `
 
-The resulting file has a size of 4MB until 2010 and 8MB with 2011 iMac models.
+The resulting file `myfirmware.bin` has a size of 4MB until 2010 and 8MB with 2011 iMac models.
 
 ## Accessing saved files from macOS 
 
