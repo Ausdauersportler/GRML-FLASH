@@ -63,7 +63,7 @@ Saving the original version to the Backups folder
 ./nvflash --save Backups/OldNVBios.rom
 `
 
-and
+and for flashing/writing a new video BIOS `NewNVBIOS.rom`from folder NVIDIA
 
 ```
 % ./nvflash --protectoff
