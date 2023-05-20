@@ -84,14 +84,18 @@ To use the iMac/Mac BIOS flashing tools change working directory to:
 and
 
 `
-% flashrom --programmer internal -r myfirmware.bin
+% flashrom --programmer internal -r my_firmware.bin
 `
 
-The resulting file `myfirmware.bin` has a size of 4MB until 2010 and 8MB with 2011 iMac models.
+The resulting file `my_firmware.bin` has a size of 4MB until 2010 and 8MB with 2011 iMac models. Early 2009 systems have no write protections and you can write back a modified versions of the firmware easily using:
+
+`
+% flashrom --programmer internal -w my_modified_firmware.bin
+`
 
 ## Accessing saved files from macOS 
 
-Your saved video BIOS files can be found on the USB (Windows FAT32 format) under flash -> Video -> Backups assuming your have used the linux terminal commands as described above.
+Your saved video BIOS files can be found on the USB (Windows FAT32 format) under flash -> Video -> Backups assuming your have used the linux terminal commands as described above. Firmware files can be found in flash -> Firmware.
 
 If you plan to write a new AMD video BIOS to your card just copy the new image into the flash -> Video -> AMD in advance.
 
@@ -112,6 +116,10 @@ The tool uses FAT32 to achieve double compability. It can be booted on any Mac w
 [GRML](https://grml.org) is a packaged Linux distribution based on [Debian](https://www.debian.org). Debian [license rules](https://www.debian.org/legal/index.en.html) can be obtained the project page.
 
 Please look up the license rules of the mainly used software like [Flashrom](https://www.flashrom.org/Flashrom), [amdvbflash](https://www.techpowerup.com/download/ati-atiflash/) and [nvflash](https://www.techpowerup.com/download/nvidia-nvflash/).
+
+## Credits
+
+Original version has been created by [xanderon](https://forums.macrumors.com/members/1201679/) on MacRumors.
 
 ## Support
 
