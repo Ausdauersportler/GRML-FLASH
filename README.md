@@ -20,6 +20,17 @@ iMac12,1 and iMac12,2 mid 2011
 
 Of course this tool can be used on any other Intel based system like MacPro4,1 or MacPro5,1!
 
+## Booting from the USB 
+
+If your Mac has not EFI capable graphics card installed you should simply disconnect all other drives from all connectors. On power on the Mac will scan the USB bus and find and boot the prepared Linux USB. 
+
+## Remote Access via SSH
+
+In case you have a black screen scenario with a non working graphics card detach all bootable disk devices, attach your iMac via ethernet directly to a router providing a DHCP service and force booting form the USB tool. Check your router for the IP address (e.g. 192.168.1.20) provided to your iMac and access the Linux distribution remotly from another PC, Mac, iPad - literally any device running an SSH client can be used. Default password of user `root` is `flash`. Access is possible through (replace IP with your address)
+
+`
+% ssh root@IP 
+`
 ## Working directory with persistence
 
 The tool supports persistence, i.e. dumps from your BIOS or video BIOS can be saved on the USB device in the particualar working directory as described below.
@@ -98,14 +109,6 @@ The resulting file `my_firmware.bin` has a size of 4MB until 2010 and 8MB with 2
 Your saved video BIOS files can be found on the USB (Windows FAT32 format) under flash -> Video -> Backups assuming your have used the linux terminal commands as described above. Firmware files can be found in flash -> Firmware.
 
 If you plan to write a new AMD video BIOS to your card just copy the new image into the flash -> Video -> AMD in advance.
-
-## Remote Access via SSH
-
-In case you have a black screen scenario with a non working graphics card detach all bootable disk devices, attach your iMac via ethernet directly to a router providing a DHCP service and force booting form the USB tool. Check your router for the IP address (e.g. 192.168.1.20) provided to your iMac and access the Linux distribution remotly from another PC, Mac, iPad - literally any device running an SSH client can be used. Default password of user `root` is `flash`. Access is possible through (replace IP with your address)
-
-`
-% ssh root@IP 
-`
 
 ## Rebuilding a new GRML 
 
