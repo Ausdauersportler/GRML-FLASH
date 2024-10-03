@@ -66,6 +66,15 @@ Flashing a new video BIOS stored in file NewAMDBIOS.rom from folder AMD
 `
 % ./amdvbflash -p 0 AMD/NewAMDBios.rom 
 `
+
+In case you find a more recent BIOS already on your card you can force writing an older version using
+
+`
+% ./amdvbflash -f -p 0 AMD/NewAMDBios.rom 
+`
+
+Reboot after flashing the video BIOS.
+
 ## NVIDIA graphcis card flashing
 
 Saving the original version to the Backups folder
@@ -116,7 +125,7 @@ The tool uses FAT32 to achieve double compability. It can be booted on any Mac w
 
 ## License
 
-[GRML](https://grml.org) is a packaged Linux distribution based on [Debian](https://www.debian.org). Debian [license rules](https://www.debian.org/legal/index.en.html) can be obtained the project page.
+[GRML](https://grml.org) is a packaged Linux distribution based on [Debian](https://www.debian.org). Debian [license rules](https://www.debian.org/legal/index.en.html) can be found on the Debian project page.
 
 Please look up the license rules of the mainly used software like [Flashrom](https://www.flashrom.org/Flashrom), [amdvbflash](https://www.techpowerup.com/download/ati-atiflash/) and [nvflash](https://www.techpowerup.com/download/nvidia-nvflash/).
 
