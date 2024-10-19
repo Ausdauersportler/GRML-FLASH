@@ -4,7 +4,7 @@ GRML Linux based flash tool with flashrom, amdvbflash, nvflash
 
 Download disk image (check releases on this page) and restore it using the [Balena Etcher tool](https://www.balena.io/etcher/) onto an USB or SD device of at least 1 GB size.
 
-The purpose of this tool is to use `amdvbflash` or `nvflash` to read existing or write new Video BIOS versions to graphics adapters or to save and modify (Apple iMac) firmware using `flashrom` and `UEFIPatch` to enable EFI boot screen support for Apple iMac models
+The purpose of this tool is to use `amdvbflash` or `nvflash` to read existing or write new Video BIOS versions to graphics adapters or to save and modify (Apple iMac) firmware using `flashrom` and `UEFIPatch` to enable EFI boot screen support for Apple iMac models listed below. Please note the most recent Video BIOS versions will be found on this separate [repository](https://github.com/Ausdauersportler/IMAC-EFI-BOOT-SCREEN). You need to download the file you need and add it manually to the tool provided here. Supported iMac models are:
 
 iMac9,1 early 2009 24 inch (2,93GHz and 3,06GHz models, only)
 
@@ -18,7 +18,7 @@ iMac11,2 and iMac11,3 mid 2010
 
 iMac12,1 and iMac12,2 mid 2011
 
-Of course this tool can be used on any other Intel based system like MacPro4,1 or MacPro5,1!
+Of course this tool can be used on any other Intel based system like MacPro4,1 or MacPro5,1 or other normal PCs!
 
 ## Booting from the USB 
 
