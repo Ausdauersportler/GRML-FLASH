@@ -8,7 +8,7 @@ The purpose of this tool is to use `amdvbflash` or `nvflash` to read existing or
 
 ### Contents
 
-Please note the most recent graphics card BIOS versions will be found on this separate [repository](https://github.com/Ausdauersportler/IMAC-EFI-BOOT-SCREEN). You need to download the file you need separately and add it manually to the tool provided here. 
+Please note the most recent graphics card BIOS versions will be found on this separate [repository](https://github.com/Ausdauersportler/IMAC-EFI-BOOT-SCREEN). You will have to download the file you need separately and add it manually to the tool provided here, the folder flash -> Video is the best place to save it.
 
 You can also update `amdvbflash` and `nvflash` manually, I will not create new releases each time a new software version hits the internet.
 
@@ -137,14 +137,14 @@ The tool uses FAT32 to achieve double compability. It can be booted on any Mac o
 
 Put the ISO image either into the flash folder and navigate there as usual after booting Linux or download it using ssh into the `/root` folder. 
 
-Now plug in another prepared USB or SD-card (FAT32/GUID) and check the `/etc/vfstab` file of your currently booted Linux, the last line will reveal the device where the newly plugged in device can be accessed. Usually I name the new device differently like 'NEWFLASH'.
+Now plug in another prepared USB or SD-card (FAT32/GUID) and check the `/etc/vfstab` file of your currently booted Linux, the last line will reveal the device where the newly plugged in device can be accessed. Usually I name the new device differently like `NEWFLASH`.
 Finally start the process by entering the command line below (assuming `/dev/sdc2` is the device of choice):
 
 `
 % grml2usb --bootoptions="keyboard=de ssh=flash persistence" --skip-bootflag grml64-full_2021.07.iso /dev/sdc2
 `
 
-Just to confuse you all, the `keyboard=de` sets keyboard type to German, which I usually have around here. You can either delete the keyboard setting or adapt it to your local needs. The `ssh=flash'` sets the ssh password to `flash`, the `persistence` flag makes the USB writable after booted into Linux to save PC/Mac firmware or graphics card firmware aka vBIOS files.
+Just to confuse you all, the `keyboard=de` sets keyboard layout to German, which I usually have around here. You can either delete the keyboard setting or adapt it to your local needs. The `ssh=flash` sets the ssh password to `flash`, the `persistence` flag makes the USB writable after booted into Linux to save PC/Mac firmware or graphics card firmware aka vBIOS files.
 
 Finally you can mount the USB on your macOS system and add copy over the flash folder from the old version or create a new one to have a fresh start. All releases here have a prepared `flash` folder with some binaries and other files.
 
