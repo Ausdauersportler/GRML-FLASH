@@ -1,10 +1,20 @@
 # GRML-FLASH
 
-GRML Linux based flash tool with flashrom, amdvbflash, nvflash 
+GRML Linux based flash tool with flashrom, amdvbflash, and nvflash. 
 
 Download disk image (check releases on this page) and restore it using the [Balena Etcher tool](https://www.balena.io/etcher/) onto an USB or SD device of at least 1 GB size.
 
-The purpose of this tool is to use `amdvbflash` or `nvflash` to read existing or write new Video BIOS versions to graphics adapters or to save and modify (Apple iMac) firmware using `flashrom` and `UEFIPatch` to enable EFI boot screen support for Apple iMac models listed below. Please note the most recent Video BIOS versions will be found on this separate [repository](https://github.com/Ausdauersportler/IMAC-EFI-BOOT-SCREEN). You need to download the file you need and add it manually to the tool provided here. Supported iMac models are:
+The purpose of this tool is to use `amdvbflash` or `nvflash` to read existing or write new Video BIOS versions to graphics adapters or to save and modify (Apple iMac) firmware using `flashrom` and `UEFIPatch` to enable EFI boot screen support for Apple iMac models listed below. 
+
+### Contents
+
+Please note the most recent graphics card BIOS versions will be found on this separate [repository](https://github.com/Ausdauersportler/IMAC-EFI-BOOT-SCREEN). You need to download the file you need separately and add it manually to the tool provided here. 
+
+You can also update `amdvbflash` and `nvflash` manually, I will not create new releases each time a new software version hits the internet.
+
+### Supported hardware
+
+Supported iMac models are:
 
 iMac9,1 early 2009 24 inch (2,93GHz and 3,06GHz models, only)
 
@@ -18,11 +28,13 @@ iMac11,2 and iMac11,3 mid 2010
 
 iMac12,1 and iMac12,2 mid 2011
 
-Of course this tool can be used on any other Intel based system like MacPro4,1 or MacPro5,1 or other normal PCs!
+Of course this tool can be used on any other Intel based system like MacPro3,1, MacPro4,1 or MacPro5,1 or even on normal PCs! 
+
+Supported graphics hardware includes all ATI/AMD and NVIDIA cards usable in Mac Intel hardware. Most recent graphics cards may need updated versions of amdvbflash or nvflash. 
 
 ## Booting from the USB 
 
-If your Mac has not EFI capable graphics card installed you should simply disconnect all other drives from all connectors. On power on the Mac will scan the USB bus and find and boot the prepared Linux USB. 
+If your Mac has no EFI capable graphics card installed you should simply disconnect all other drives from all connectors. On power on the Mac will scan the USB bus and find and boot the prepared Linux USB. 
 
 ## Remote Access via SSH
 
@@ -121,7 +133,22 @@ If you plan to write a new AMD video BIOS to your card just copy the new image i
 
 ## Rebuilding a new GRML 
 
-The tool uses FAT32 to achieve double compability. It can be booted on any Mac without installing another boot loader and you have read and write access from the Apple Finder. GRML uses normally Linux ext2, so we have to boot strap through two stages folling this [guide](https://forums.macrumors.com/threads/imac-2011-see-more-uefi-firmware-mod.2257435/post-31093603) by using the existing GRML tool. Download a new version of GRML [here](https://grml.org). Upcoming version will be 2022.11.
+The tool uses FAT32 to achieve double compability. It can be booted on any Mac or PC without installing another boot loader and you have read and write access from the Apple Finder or Windows desktop. GRML uses normally Linux ext2, so we have to boot strap through two stages folling this [guide](https://forums.macrumors.com/threads/imac-2011-see-more-uefi-firmware-mod.2257435/post-31093603) or the condensed description below by using the existing GRML tool. First download a new/recent version of GRML [here](https://grml.org). Recent version is named 2024.02 and it has Navi23 drivers.
+
+Put the ISO image either into the flash folder and navigate there as usual after booting Linux or download it using ssh into the `/root` folder. 
+
+Now plug in another prepared USB or SD-card (FAT32/GUID) and check the `/etc/vfstab` file of your currently booted Linux, the last line will reveal the device where the newly plugged in device can be accessed. Usually I name the new device differently like 'NEWFLASH'.
+Finally start the process by entering the command line below (assuming `/dev/sdc2` is the device of choice):
+
+`
+% grml2usb --bootoptions="keyboard=de ssh=flash persistence" --skip-bootflag grml64-full_2021.07.iso /dev/sdc2
+`
+
+Just to confuse you all, the `keyboard=de` sets keyboard type to German, which I usually have around here. You can either delete the keyboard setting or adapt it to your local needs. The `ssh=flash'` sets the ssh password to `flash`, the `persistence` flag makes the USB writable after booted into Linux to save PC/Mac firmware or graphics card firmware aka vBIOS files.
+
+Finally you can mount the USB on your macOS system and add copy over the flash folder from the old version or create a new one to have a fresh start. All releases here have a prepared `flash` folder with some binaries and other files.
+
+![flash folder and contents](https://github.com/Ausdauersportler/IMAC-EFI-BOOT-SCREEN/blob/main/images/GRML-FLASH.png)
 
 ## License
 
