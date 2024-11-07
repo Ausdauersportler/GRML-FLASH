@@ -4,7 +4,7 @@ GRML Linux based flash tool with flashrom, amdvbflash, and nvflash.
 
 Download disk image (check releases on this page) and restore it using the [Balena Etcher tool](https://www.balena.io/etcher/) onto an USB or SD device of at least 1 GB size.
 
-The purpose of this tool is to use `amdvbflash` or `nvflash` to read existing or write new Video BIOS versions to graphics adapters or to save and modify (Apple iMac) firmware using `flashrom` and `UEFIPatch` to enable EFI boot screen support for Apple iMac models listed below. 
+The purpose of this tool is to use `amdvbflash` or `nvflash` to read existing or write new video BIOS versions to graphics adapters or to save and modify (Apple iMac) firmware using `flashrom` and `UEFIPatch` to enable EFI boot screen support for Apple iMac models listed below. 
 
 ### Contents
 
