@@ -2,13 +2,13 @@
 
 GRML Linux based flash tool with flashrom, amdvbflash, and nvflash. 
 
-Download disk image (check releases on this page) and restore it using the [Balena Etcher tool](https://www.balena.io/etcher/) onto an USB or SD device of at least 1 GB size.
+Download disk image (check releases on this page) and restore it using the [Balena Etcher tool](https://www.balena.io/etcher/) onto an USB or SD device of at least 1 GB size. Unfortunately this method creates a 1GB filesystem with limited free space, enough to store your Macs firmware and your video bios image. If you have a USB device with more capacity format it using FAT (not ExFAT!), just open the image in Finder, and copy all folders over to the new and bigger drive. 
 
 The purpose of this tool is to use `amdvbflash` or `nvflash` to read existing or write new video BIOS versions to graphics adapters or to save and modify (Apple iMac) firmware using `flashrom` and `UEFIPatch` to enable EFI boot screen support for Apple iMac models listed below. 
 
 ### Contents
 
-Please note the most recent graphics card BIOS versions will be found on this separate [repository](https://github.com/Ausdauersportler/IMAC-EFI-BOOT-SCREEN). You will have to download the file you need separately and add it manually to the tool provided here, the folder flash -> Video is the best place to save it.
+Please note the most recent graphics card BIOS versions will be found on this separate [repository](https://github.com/Ausdauersportler/IMAC-EFI-BOOT-SCREEN). You will have to download the file you need separately and add it manually to the tool provided here, the folder flash -> video is the best place to save it.
 
 You can also update `amdvbflash` and `nvflash` manually, I will not create new releases each time a new software version hits the internet.
 
@@ -45,7 +45,7 @@ In case you have a black screen scenario with a non working graphics card detach
 `
 ## Working directory with persistence
 
-The tool supports persistence, i.e. dumps from your BIOS or video BIOS can be saved on the USB device in the particualar working directory as described below.
+The tool supports persistence, i.e. dumps from your BIOS or video BIOS can be saved on the USB device in the particualar working directory as described below. Please note v2.0.0 has folder names changed from `Video` to `video` and `Firmware` to `firmware` (good old Unix habit).
 
 After booting configure the local keyboard and check for the working directory using the `lsblk` command. 
 
@@ -62,7 +62,7 @@ Note this working folder may change on different systems and on the same system 
 To use the video flashing tools change working directory to:
 
 `
-% cd /lib/live/mount/persistence/sda/flash/Video 
+% cd /lib/live/mount/persistence/sda/flash/video 
 `
 
 ## AMD graphcis card flashing
@@ -111,7 +111,7 @@ Reboot after flashing the video BIOS.
 To use the iMac/Mac BIOS flashing tools change working directory to:
 
 `
-% cd /lib/live/mount/persistence/sda/flash/Firmware
+% cd /lib/live/mount/persistence/sda/flash/firmware
 `
 and
 
