@@ -2,7 +2,7 @@
 
 GRML Linux based flash tool with flashrom, amdvbflash, and nvflash. 
 
-Download disk image (check releases on this page) and restore it using the [Balena Etcher tool](https://www.balena.io/etcher/) onto an USB or SD device of at least 1 GB size. Unfortunately this method creates a 1GB filesystem with limited free space, enough to store your Macs firmware and your video bios image. If you have a USB device with more capacity format it using FAT (not ExFAT!), just open the image in Finder, and copy all folders over to the new and bigger drive. 
+Download disk image (check releases on this page) and restore it using the [Balena Etcher tool](https://www.balena.io/etcher/) onto an USB or SD device of at least 1 GB size. Unfortunately this method creates a 1GB filesystem with limited free space, enough to store your Macs firmware and your video bios image. If you have a USB device with more capacity format it using FAT/GUID (not ExFAT!), just open the image in Finder, and copy all folders over to the new and bigger drive. GUID allows you to add OpenCore via OCLP to the EFI partition on the USB to get an emulated boot screen on Macs with PC graphics cards.
 
 The purpose of this tool is to use `amdvbflash` or `nvflash` to read existing or write new video BIOS versions to graphics adapters or to save and modify (Apple iMac) firmware using `flashrom` and `UEFIPatch` to enable EFI boot screen support for Apple iMac models listed below. 
 
